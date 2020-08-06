@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyMovieDB</string>
+    <string name="lbl_movie_name">Westworld</string>
+    <string name="lbl_vote_average">8.20</string>
+    <string name="em_no_movies">There are no movies available right now!</string>
+
+    <string name="lbl_main_heading">Discover</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lbl_popular_movies_and_series">BEST POPULAR FILMS AND SERIES</string>
+    <string name="txt_more_creator"><u>MORE CREATORS</u></string>
+    <string name="txt_creators">CREATORS</string>
+    <string name="txt_seemore"><u>SEE MORE</u></string>
+    <string name="lbl_best_actors">BEST ACTORS</string>
+    <string name="lbl_more_actors"><u>MORE ACTORS</u></string>
+</resources>

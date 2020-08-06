@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sa.mymoviedb.views.viewpods.ActorsViewPod
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/margin_medium_2"
+    android:paddingBottom="@dimen/margin_medium_2"
+    android:background="#1E2634">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <org.mmtextview.components.MMTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_best_actors"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:textColor="#454D5C"/>
+
+        <org.mmtextview.components.MMTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_more_actors"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/margin_medium_2"
+            android:textAlignment="textEnd"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:textColor="#454D5C"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_actors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium"
+        tools:listitem="@layout/item_cast"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</com.sa.mymoviedb.views.viewpods.ActorsViewPod>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        tools:context=".activities.MovieDetailsActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <include
+                layout="@layout/collapse_movie_details" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/container_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium_2">
+
+                <org.mmtextview.components.MMTextView
+                    android:id="@+id/lbl_storyline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="STORYLINE"
+                    android:textColor="#454D5C"/>
+
+                <org.mmtextview.components.MMTextView
+                    android:id="@+id/tv_storyline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is about storyline"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_below="@id/lbl_storyline"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:textColor="@color/full_white"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_play_trailer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:background="@drawable/rounded_corner_button"
+                    android:text="PLAY TRAILER"
+                    android:textSize="@dimen/text_small"
+                    app:cornerRadius="40dp"
+                    android:layout_below="@id/tv_storyline"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    app:icon="@drawable/ic_play_circle_filled_24"
+                    app:iconSize="16dp"
+                    app:iconTint="#94741d" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_storyline"
+                    android:layout_toEndOf="@id/btn_play_trailer"
+                    app:cornerRadius="40dp"
+                    app:icon="@drawable/ic_star_24"
+                    android:textSize="@dimen/text_small"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/full_white"
+                    android:text="RATE MOVIE"
+                    app:iconSize="16dp"
+                    app:iconTint="@color/colorAccent"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/container_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/container_one"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:background="#1E2634">
+
+                <org.mmtextview.components.MMTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACTORS"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:textColor="#454D5C"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_casts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    tools:listitem="@layout/item_cast"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/container_two">
+
+                <org.mmtextview.components.MMTextView
+                    android:id="@+id/lbl_about_film"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABOUT FILM"
+                    android:layout_margin="@dimen/margin_medium_2"
+                    android:textColor="#454D5C"/>
+
+                <include
+                    android:id="@+id/vp_original_title"
+                    layout="@layout/view_pod_label_and_description" />
+
+                <include
+                    android:id="@+id/vp_type"
+                    layout="@layout/view_pod_label_and_description" />
+
+                <include
+                    android:id="@+id/vp_production"
+                    layout="@layout/view_pod_label_and_description" />
+
+
+                <include
+                    android:id="@+id/vp_premier"
+                    layout="@layout/view_pod_label_and_description" />
+
+                <include
+                    android:id="@+id/vp_description"
+                    layout="@layout/view_pod_label_and_description" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/container_three"
+                android:paddingTop="@dimen/margin_medium_2"
+                android:background="#1E2634">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <org.mmtextview.components.MMTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_creators"
+                        android:layout_marginLeft="@dimen/margin_medium_2"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:textColor="#454D5C"/>
+
+                    <org.mmtextview.components.MMTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_more_creator"
+                        android:layout_weight="2"
+                        android:layout_marginRight="@dimen/margin_medium_2"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="@dimen/margin_medium_2"
+                        android:layout_marginBottom="@dimen/margin_medium"
+                        android:textColor="#454D5C"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_crews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    tools:listitem="@layout/item_crew"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
