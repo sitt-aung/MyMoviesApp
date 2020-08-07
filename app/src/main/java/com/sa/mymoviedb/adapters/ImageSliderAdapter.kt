@@ -20,6 +20,10 @@ class ImageSliderAdapter(fragmentActivity: FragmentActivity)
     }
 
     override fun createFragment(position: Int): Fragment {
-        return ImageSliderFragment.newInstance(movies[position].posterPath, movies[position].id)
+        return ImageSliderFragment.newInstance(
+            movies[position].posterPath,
+            movies[position].id,
+            movies[position].originalTitle
+        )
     }
 }

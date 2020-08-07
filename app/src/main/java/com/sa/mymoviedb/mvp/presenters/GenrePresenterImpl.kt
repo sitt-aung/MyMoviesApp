@@ -7,13 +7,12 @@ import com.sa.mymoviedb.mvp.views.GenreListView
 
 class GenrePresenterImpl : GenrePresenter, AbstractBasePresenter<GenreListView>() {
 
-    private val mMovieModel: MovieModel = MovieModelImpl
+    var mMovieModel: MovieModel = MovieModelImpl
 
     override fun onUIReady(lifecycleOwner: LifecycleOwner, movieId: Int) {
         mMovieModel.getMoviesByGenreId(movieId, {
             mView?.displayMoviesByGenre(it.toMutableList())
         }, {
-
         })
     }
 

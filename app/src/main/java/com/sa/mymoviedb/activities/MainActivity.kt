@@ -9,11 +9,13 @@ import com.sa.mymoviedb.adapters.*
 import com.sa.mymoviedb.data.vos.GenreVO
 import com.sa.mymoviedb.data.vos.MovieVO
 import com.sa.mymoviedb.data.vos.PersonVO
+import com.sa.mymoviedb.data.vos.VideoVO
 import com.sa.mymoviedb.mvp.presenters.MainPresenter
 import com.sa.mymoviedb.mvp.presenters.MainPresenterImpl
 import com.sa.mymoviedb.mvp.views.MainView
 import com.sa.mymoviedb.views.viewpods.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_image_slider.*
 
 class MainActivity : BaseActivity(), MainView {
 

@@ -1,10 +1,7 @@
 package com.sa.mymoviedb.data.models
 
 import androidx.lifecycle.LiveData
-import com.sa.mymoviedb.data.vos.GenreVO
-import com.sa.mymoviedb.data.vos.MovieDetailsVO
-import com.sa.mymoviedb.data.vos.MovieVO
-import com.sa.mymoviedb.data.vos.PersonVO
+import com.sa.mymoviedb.data.vos.*
 
 interface MovieModel {
 
@@ -20,7 +17,7 @@ interface MovieModel {
     fun getMoviesByGenreId(genreId: Int, onSuccess: (movies: List<MovieVO>) -> Unit, onError: (String) -> Unit)
 
     fun getMovieDetails(movieId: Int, onSuccess: (MovieDetailsVO) -> Unit, onError: (String) -> Unit)
-
     fun changeFavStatus(personId: Int, isFavorite: Boolean)
 
+    fun getVideoByMovieId(movieId: Int, onSuccess: (VideoVO) -> Unit, onError: (String) -> Unit)
 }

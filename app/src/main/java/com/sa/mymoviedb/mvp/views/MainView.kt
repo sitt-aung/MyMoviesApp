@@ -3,6 +3,7 @@ package com.sa.mymoviedb.mvp.views
 import com.sa.mymoviedb.data.vos.GenreVO
 import com.sa.mymoviedb.data.vos.MovieVO
 import com.sa.mymoviedb.data.vos.PersonVO
+import com.sa.mymoviedb.data.vos.VideoVO
 
 interface MainView : BaseView {
     fun displayPopularMoviesList(movies: List<MovieVO>)

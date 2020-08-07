@@ -17,7 +17,6 @@
         android:layout_gravity="bottom"
         android:background="@android:color/transparent"
         app:tabGravity="center"
-        android:layout_marginBottom="@dimen/margin_medium"
         app:tabBackground="@drawable/tab_selector"
         app:tabIndicatorHeight="0dp"/>
 

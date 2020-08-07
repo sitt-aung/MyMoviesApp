@@ -3,10 +3,7 @@ package com.sa.mymoviedb.data.models.impls
 import androidx.lifecycle.LiveData
 import com.sa.mymoviedb.data.models.BaseModel
 import com.sa.mymoviedb.data.models.MovieModel
-import com.sa.mymoviedb.data.vos.GenreVO
-import com.sa.mymoviedb.data.vos.MovieDetailsVO
-import com.sa.mymoviedb.data.vos.MovieVO
-import com.sa.mymoviedb.data.vos.PersonVO
+import com.sa.mymoviedb.data.vos.*
 import com.sa.mymoviedb.utils.API_KEY
 import com.sa.mymoviedb.utils.EM_NO_INTERNET_CONNECTION
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -38,7 +35,7 @@ object MovieModelImpl : MovieModel, BaseModel() {
 
     override fun getAllActorsAndSaveToDatabase(onSuccess: () -> Unit, onError: (String) -> Unit) {
         mMovieApi.getPopularActors(API_KEY)
-            .map { it.results.toList() ?: listOf() }
+            .map { it.results.toList() }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -56,7 +53,7 @@ object MovieModelImpl : MovieModel, BaseModel() {
 
     override fun getAllGenresAndSaveToDatabase(onSuccess: () -> Unit, onError: (String) -> Unit) {
         mMovieApi.getAllGenres(API_KEY)
-            .map { it.genres.toList() ?: listOf() }
+            .map { it.genres.toList() }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -101,6 +98,21 @@ object MovieModelImpl : MovieModel, BaseModel() {
 
     override fun changeFavStatus(personId: Int, isFavorite: Boolean) {
         mMoviesDB.personDao().changeFavoriteState(personId, isFavorite)
+    }
+
+    override fun getVideoByMovieId(
+        movieId: Int,
+        onSuccess: (VideoVO) -> Unit,
+        onError: (String) -> Unit
+    ) {
+        mMovieApi.getVideosById(movieId, API_KEY)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                onSuccess(it.results[0])
+            }, {
+                onError(it.localizedMessage ?: EM_NO_INTERNET_CONNECTION)
+            })
     }
 
 }

@@ -5,11 +5,12 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.sa.mymoviedb.data.models.MovieModel
 import com.sa.mymoviedb.data.models.impls.MovieModelImpl
+import com.sa.mymoviedb.data.vos.VideoVO
 import com.sa.mymoviedb.mvp.views.MainView
 
 class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
 
-    private val mMovieModel: MovieModel = MovieModelImpl
+    var mMovieModel: MovieModel = MovieModelImpl
 
     override fun onUIReady(lifecycleOwner: LifecycleOwner) {
         getAllData(lifecycleOwner)

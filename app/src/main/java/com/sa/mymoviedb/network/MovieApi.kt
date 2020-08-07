@@ -4,6 +4,7 @@ import com.sa.mymoviedb.data.vos.MovieDetailsVO
 import com.sa.mymoviedb.network.responses.GetGenresResponse
 import com.sa.mymoviedb.network.responses.GetMoviesResponse
 import com.sa.mymoviedb.network.responses.GetPopularPeopleResponse
+import com.sa.mymoviedb.network.responses.GetVideosResponse
 import com.sa.mymoviedb.utils.*
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -31,4 +32,8 @@ interface MovieApi {
     @GET(GET_MOVIES_BY_GENRE)
     fun getMoviesByGenre(@Query("api_key") apiKey: String, @Query("with_genres") genreId: Int):
             Observable<GetMoviesResponse>
+
+    @GET("movie/{movie_id}/videos")
+    fun getVideosById(@Path("movie_id") movieId: Int, @Query("api_key") apiKey: String)
+            : Observable<GetVideosResponse>
 }
